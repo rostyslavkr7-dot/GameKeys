@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GameKeys — Ігри та цифрові ключі</title>
+    <meta name="description" content="GameKeys — цифрові ключі для Steam, Xbox, PlayStation та Windows.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+
+        <a href="#" class="logo">
+            🎮 <span>Game<span class="logo-accent">Keys</span></span>
+        </a>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Пошук гри..."
+                autocomplete="off"
+            >
+            <button id="search-btn">🔍</button>
+        </div>
+
+        <div class="header-actions">
+            <button class="header-btn" id="login-btn">
+                👤 Увійти
+            </button>
+
+            <button class="header-btn cart-btn" id="cart-btn">
+                🛒 Кошик
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+
+<nav class="nav">
+    <div class="container nav-inner">
+
+        <button class="category-btn active" data-category="all">
+            Всі
+        </button>
+
+        <button class="category-btn" data-category="Steam">
+            🎮 Steam
+        </button>
+
+        <button class="category-btn" data-category="Xbox">
+            🟢 Xbox
+        </button>
+
+        <button class="category-btn" data-category="PlayStation">
+            🔵 PlayStation
+        </button>
+
+        <button class="category-btn" data-category="Windows">
+            💻 Windows
+        </button>
+
+        <div class="sort-box">
+            <select id="sort-select">
+                <option value="default">Сортування</option>
+                <option value="price-low">Ціна: від низької</option>
+                <option value="price-high">Ціна: від високої</option>
+                <option value="rating">За рейтингом</option>
+                <option value="name">За назвою</option>
+            </select>
+        </div>
+
+    </div>
+</nav>
+
+
+<main>
+
+    <section class="hero">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <span class="hero-badge">🔥 Вигідні ціни на ігри</span>
+
+                <h1>
+                    Купуй цифрові ключі
+                    <span>дешевше</span>
+                </h1>
+
+                <p>
+                    Steam, Xbox, PlayStation та Windows.
+                    Швидка доставка цифрового ключа після покупки.
+                </p>
+
+                <a href="#products" class="hero-btn">
+                    Переглянути ігри →
+                </a>
+            </div>
+
+            <div class="hero-image">
+                🎮
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="products-section" id="products">
+
+        <div class="container">
+
+            <div class="section-header">
+                <div>
+                    <h2>Популярні ігри</h2>
+                    <p>Обирай гру та додавай її до кошика</p>
+                </div>
+
+                <span id="products-count"></span>
+            </div>
+
+            <div id="products-grid" class="products-grid">
+                <!-- Товари створюються через JavaScript -->
+            </div>
+
+            <div id="no-products" class="no-products" style="display:none;">
+                <div>😔</div>
+                <h3>Нічого не знайдено</h3>
+                <p>Спробуй змінити пошуковий запит або категорію.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="features">
+
+        <div class="container features-grid">
+
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Швидка доставка</h3>
+                <p>Цифровий ключ можна отримати одразу після оплати.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Безпечна оплата</h3>
+                <p>Захищена оплата через платіжну систему.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Вигідні ціни</h3>
+                <p>Ціни на популярні цифрові товари без зайвих націнок.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎧</div>
+                <h3>Підтримка</h3>
+                <p>Допоможемо, якщо виникнуть проблеми із замовленням.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+            <a href="#" class="logo">
+                🎮 Game<span class="logo-accent">Keys</span>
+            </a>
+
+            <p>
+                Цифрові ключі для ігор та програм.
+            </p>
+        </div>
+
+        <div>
+            <h4>Інформація</h4>
+            <a href="#">Про нас</a>
+            <a href="#">Доставка</a>
+            <a href="#">Контакти</a>
+        </div>
+
+        <div>
+            <h4>Правова інформація</h4>
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">AGB</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 GameKeys. Всі права захищені.
+    </div>
+
+</footer>
+
+
+<!-- КОШИК -->
+
+<div id="cart-overlay" class="cart-overlay"></div>
+
+<aside id="cart-sidebar" class="cart-sidebar">
+
+    <div class="cart-header">
+        <h2>🛒 Ваш кошик</h2>
+
+        <button id="close-cart" class="close-btn">
+            ✕
+        </button>
+    </div>
+
+    <div id="cart-items" class="cart-items">
+        <!-- Товари кошика -->
+    </div>
+
+    <div class="cart-empty" id="cart-empty">
+        <div>🛒</div>
+        <h3>Кошик порожній</h3>
+        <p>Додай гру, щоб продовжити.</p>
+    </div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+            <span>Разом:</span>
+            <strong id="cart-total">€0.00</strong>
+        </div>
+
+        <button
+            id="checkout-btn"
+            class="checkout-btn"
+            onclick="showCheckout()"
+        >
+            Перейти до оплати
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- Повідомлення -->
+
+<div id="notification" class="notification"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
